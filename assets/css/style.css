@@ -1,0 +1,92 @@
+*{
+	margin:0px;
+	padding: 0px;
+	font-family: changa;
+}
+
+.student_form{
+	display: table;
+	margin:50px auto;
+	width: 450px;
+	
+}
+
+.form{
+	display: table;
+	margin:0px auto;
+	background-color: #09272d;
+	width: 450px;
+}
+
+.form input{
+	background:transparent;
+	border-color: gray;
+}
+
+.form input:focus{
+	background:transparent;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    outline: 0;
+  	border-color: white;
+  	box-shadow: none;
+    
+}
+
+
+.form select{
+	background:transparent;
+	border-color: gray;
+}
+
+.form select:focus{
+	background:transparent;
+}
+
+.btn-primary{
+	background-color: #075f30;
+	border-color: #075f30;
+}
+.btn-primary:hover{
+	background-color: #058a00;
+	border-color: #058a00;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
+	background-color: #075f30;
+	border-color: #075f30;
+}
+
+.table{
+	width: 80%;
+	display: block;
+	margin: 0px auto;
+
+}
+
+table tbody tr td img{
+	width: 50px;
+	height: 50px;
+	vertical-align: middle !important;
+}
+
+table tbody tr td{
+	vertical-align: middle!important;
+}
+
+table tbody tr td{
+	text-align: center;
+}
+
+table thead tr th{
+	text-align: center;
+}
+
+table thead tr td h1{
+	width: 100px;
+}
+
+
