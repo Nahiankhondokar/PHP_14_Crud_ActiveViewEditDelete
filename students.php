@@ -1,13 +1,49 @@
 <?php include_once "app/autoload.php"; ?>
 
+<?php 
+
+    /**
+     *  Delete student data form Database and Table
+     */
+
+    if ( isset($_GET['delete_id']) ) {
+
+      $delete_id = $_GET['delete_id'];
+      $delete_image = $_GET['photo'];
+
+
+      $sql = "DELETE FROM studentsTwo WHERE id='$delete_id'";
+
+      $connection -> query($sql);
+
+      // File delete function
+
+      unlink( 'photo/students/' . $delete_image );
+
+      // for going to one page to another page also same page(url clean)
+
+      header("location:students.php");
+
+
+    }
+
+
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+
+  <!-- All CSS Files -->
+
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/all.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-	<title></title>
+	
 </head>
 <body>
 
@@ -34,11 +70,15 @@
 
     <?php 
 
+    // Get value for Database in Table
+
     $sql = "SELECT * FROM studentsTwo";
 
     $data = $connection -> query($sql);
 
     $i = 1;
+
+    // Start while loop
 
     while ( $all_data = $data -> fetch_assoc() ) {
         
@@ -51,18 +91,22 @@
     <tr>
       <td scope="row"><?php echo $ii; ?></td>
       <td><?php echo $all_data['name']; ?></td>
-      <td><?php echo $all_data['email']; ?></td>
+      <td><?php echo $all_data['email']; ?></td> 
       <td><?php echo $all_data['cell']; ?></td>
       <td><?php echo $all_data['gender']; ?></td>
       <td><?php echo $all_data['location']; ?></td>
       <td><img src="photo/students/<?php echo $all_data['photo']; ?>" alt=""></td>
       <td>
-        <a href="#" class="btn btn-info">View</a>
-        <a href="#" class="btn btn-warning">Edit</a>
-        <a href="#" class="btn btn-danger">Delete</a>
+
+        <a href="#" class="btn btn-dark"><i class="far fa-thumbs-up"></i></a>
+        <a href="profile.php?student_id=<?php echo $all_data['id'] ?>" class="btn btn-info"><i class="fas fa-eye"></i></a>
+        <a href="#" class="btn btn-warning"><i class="far fa-edit"></i></a>
+        <a id="delete_btn" href="?delete_id=<?php echo $all_data['id'] ?>&photo=<?php echo $all_data['photo'] ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+        
       </td>
     </tr>
 
+  <!-- End while loop -->
 
   <?php } ?>
 
@@ -87,6 +131,21 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script>
 		
+    //  jQuery use for pop-up form
+
+    $('a#delete_btn').click(function(){
+
+      let conf = confirm('Are you sure ?');
+
+      if ( conf == true ) {
+        return true;
+
+      }else{
+        return false;
+
+      }
+
+    });
 
 
 	</script>
