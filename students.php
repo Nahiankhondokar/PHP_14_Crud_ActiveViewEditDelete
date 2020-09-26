@@ -28,6 +28,40 @@
     }
 
 
+    /**
+     * Active a user
+     */
+
+    if(isset($_GET['active_id'])) {
+      
+      $active_id = $_GET['active_id'];
+
+
+      $sql = " UPDATE studentsTwo SET status='active' WHERE id='$active_id' ";
+      $connection -> query($sql);
+
+      header("location:students.php");
+
+    }
+
+
+
+    /**
+     * Inactive a user
+     */
+
+    if(isset($_GET['inactive_id'])) {
+      
+      $inactive_id = $_GET['inactive_id'];
+
+
+      $sql = " UPDATE studentsTwo SET status='inactive' WHERE id='$inactive_id' ";
+      $connection -> query($sql);
+
+      header("location:students.php");
+
+    }
+
 
  ?>
 
@@ -59,7 +93,7 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Cell</th>
-      <th scope="col">gender</th>
+      <th scope="col">Gender</th>
       <th scope="col">Location</th>
       <th scope="col">Photo</th>
       <th scope="col">Action</th>
@@ -98,9 +132,20 @@
       <td><img src="photo/students/<?php echo $all_data['photo']; ?>" alt=""></td>
       <td>
 
-        <a href="#" class="btn btn-dark"><i class="far fa-thumbs-up"></i></a>
+        <?php if( $all_data['status'] == 'inactive' ) : ?>
+
+          <a href="?active_id=<?php echo $all_data['id'] ?>" class="btn btn-success"><i class="far fa-thumbs-up"></i></a>
+
+        <?php elseif( $all_data['status'] == 'active' ) : ?>
+
+          <a href="?inactive_id=<?php echo $all_data['id'] ?>" class="btn btn-danger"><i class="far fa-thumbs-down"></i></a>
+
+        <?php endif; ?>
+
+         
+
         <a href="profile.php?student_id=<?php echo $all_data['id'] ?>" class="btn btn-info"><i class="fas fa-eye"></i></a>
-        <a href="#" class="btn btn-warning"><i class="far fa-edit"></i></a>
+        <a href="edit.php?edit_id=<?php echo $all_data['id'] ?>" class="btn btn-warning"><i class="far fa-edit"></i></a>
         <a id="delete_btn" href="?delete_id=<?php echo $all_data['id'] ?>&photo=<?php echo $all_data['photo'] ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
         
       </td>
