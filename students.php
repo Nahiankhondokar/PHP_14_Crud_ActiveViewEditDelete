@@ -16,9 +16,13 @@
 
       $connection -> query($sql);
 
+
+
       // File delete function
 
       unlink( 'photo/students/' . $delete_image );
+
+      
 
       // for going to one page to another page also same page(url clean)
 
@@ -70,7 +74,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>Class 14</title>
 
   <!-- All CSS Files -->
 
