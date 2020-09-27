@@ -22,7 +22,7 @@
 
       unlink( 'photo/students/' . $delete_image );
 
-      
+
 
       // for going to one page to another page also same page(url clean)
 
@@ -91,6 +91,7 @@
 <a href="index.php" class="btn btn-primary rounded-0">Add New Students</a>
 <h2 class="title bg-dark p-3 mb-0 text-white w-100">All Students</h2>
 <table class="table-striped shadow-lg table-dark w-100 mt-0">
+  
   <thead>
     <tr>
       <th scope="col">No</th>
@@ -133,7 +134,11 @@
       <td><?php echo $all_data['cell']; ?></td>
       <td><?php echo $all_data['gender']; ?></td>
       <td><?php echo $all_data['location']; ?></td>
-      <td><img src="photo/students/<?php echo $all_data['photo']; ?>" alt=""></td>
+      <td><img style="border-radius: 50%; border:5px solid gray;" src="photo/students/<?php echo $all_data['photo']; ?>" alt="">
+      </td>
+
+       
+
       <td>
 
         <?php if( $all_data['status'] == 'inactive' ) : ?>

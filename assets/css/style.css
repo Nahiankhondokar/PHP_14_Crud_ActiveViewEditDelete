@@ -64,7 +64,10 @@
 	width: 80%;
 	display: block;
 	margin: 0px auto;
+}
 
+.table h2{
+	width: 100%;
 }
 
 table tbody tr td img{
@@ -89,7 +92,6 @@ table thead tr th{
 table thead tr td h1{
 	width: 100px;
 }
-
 
 .profile img{
 	width: 200px;
