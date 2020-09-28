@@ -134,7 +134,19 @@
       <td><?php echo $all_data['cell']; ?></td>
       <td><?php echo $all_data['gender']; ?></td>
       <td><?php echo $all_data['location']; ?></td>
-      <td><img style="border-radius: 50%; border:5px solid gray;" src="photo/students/<?php echo $all_data['photo']; ?>" alt="">
+      <td>
+
+
+        <?php if($all_data['status'] == 'inactive') : ?>
+
+          <img style="border-radius: 50%; border:5px solid red;" src="photo/students/<?php echo $all_data['photo']; ?>" alt="">
+
+        <?php elseif($all_data['status'] == 'active') : ?>
+
+          <img id="border_radius" style="border-radius: 50%; border:5px solid green;" src="photo/students/<?php echo $all_data['photo']; ?>" alt="">
+
+        <?php endif; ?>
+
       </td>
 
        

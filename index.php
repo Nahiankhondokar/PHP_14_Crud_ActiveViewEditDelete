@@ -38,7 +38,6 @@
 		$location = $_POST['location'];
 
 
-
 		// File Management
 
 		$file_name = $_FILES['photo']['name'];

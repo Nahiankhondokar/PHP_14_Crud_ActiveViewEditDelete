@@ -4,7 +4,7 @@
 <?php 
 
 	/**
-	 * Form isseting
+	 *  Edit page form isseting
 	 */
 
 	if (isset($_POST['add'])) {
@@ -30,7 +30,7 @@
 
 
 		/**
-		 * Form validation
+		 *  Edit page Form validation
 		 */
 
 		if ( empty($name) || empty($email) || empty($cell) || empty($uname) || empty($age) || empty($gender) || empty($shift) || empty($location) ) {
@@ -61,7 +61,7 @@
 				$photo_name = $_POST['old_photo'];
 			}else{
 
-			// File Management
+			// File Management ( Photo updating system )
 
 			$file_name = $_FILES['new_photo']['name'];
 			$file_tmp_name = $_FILES['new_photo']['tmp_name'];
