@@ -42,7 +42,21 @@
 	<a href="students.php" class="btn btn-primary rounded-0">Back</a>
 	<div class="profile form p-3 text-white shadow-lg" id="">
 
-		<img src="photo/students/<?php echo $single_student['photo']; ?>" alt="">
+
+
+		<?php if($single_student['status'] == 'inactive') : ?>
+
+          <img style="border-radius: 50%; border:5px solid red; box-shadow: 0px 0px 10px red;" src="photo/students/<?php echo $single_student['photo']; ?>" alt="">
+
+        <?php elseif($single_student['status'] == 'active') : ?>
+
+          <img style="border-radius: 50%; border:5px solid green; box-shadow: 0px 0px 10px green;" src="photo/students/<?php echo $single_student['photo']; ?>" alt="">
+
+        <?php endif; ?>
+
+
+
+
 		<h2><?php echo $single_student['name']; ?></h2>
 		<h4><?php echo $single_student['uname']; ?></h4>
 

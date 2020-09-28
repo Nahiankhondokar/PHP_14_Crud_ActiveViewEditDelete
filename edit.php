@@ -197,7 +197,7 @@
 	  </div>
 
 	  <div class="form-group">
-	  	<img style="width: 200px;" src="photo/students/<?php echo $single_data['photo']; ?>" alt="">
+	  	<img style="width: 100px;" src="photo/students/<?php echo $single_data['photo']; ?>" alt="">
 	  	<input name="old_photo" value="<?php echo $single_data['photo']; ?>" type="hidden">
 	  </div>
 	  
