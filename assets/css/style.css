@@ -124,3 +124,42 @@ table thead tr td h1{
 .profileTwo tr{
 	border:1px solid gray;
 }
+
+.btn_on {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    top: -13px;
+    left: 38px;
+    right: 0px;
+    bottom: 0px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.btn_off {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    top: -13px;
+    left: 38px;
+    right: 0px;
+    bottom: 0px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.active_btn{
+
+	position: relative;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+
+
+

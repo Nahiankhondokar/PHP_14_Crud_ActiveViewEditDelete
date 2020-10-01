@@ -139,11 +139,15 @@
 
         <?php if($all_data['status'] == 'inactive') : ?>
 
-          <img style="border-radius: 50%; border:5px solid red;" src="photo/students/<?php echo $all_data['photo']; ?>" alt="">
+          <img class="active_btn" style="border-radius: 50%; border:3px solid red;" src="photo/students/<?php echo $all_data['photo']; ?>" alt="">
+
+          <div class="btn_off"></div>
 
         <?php elseif($all_data['status'] == 'active') : ?>
 
-          <img id="border_radius" style="border-radius: 50%; border:5px solid green;" src="photo/students/<?php echo $all_data['photo']; ?>" alt="">
+          <img id="border_radius" style="border-radius: 50%; border:3px solid green;" src="photo/students/<?php echo $all_data['photo']; ?>" alt="">
+
+          <div class="btn_on"></div>
 
         <?php endif; ?>
 
